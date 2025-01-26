@@ -58,26 +58,38 @@ class RespondForm(BaseModel):
         orm_mode = True 
 
 
-######################### activities ##############################
+######################### articles ##############################
 
-class CreateActivity(BaseModel):
+class CreateArticle(BaseModel):
     title : str 
     content: str 
+    summary: str
+    main_photo_url: str
+    sub_photo_urls: str
+    social_share_links: str
 
-class RespondActivity(BaseModel):
+class RespondArticle(BaseModel):
     id : int 
     author_id: int 
     title : str 
     content: str 
+    summary: str
+    main_photo_url: str
+    sub_photo_urls: str
+    social_share_links: str
     created_at : datetime
     updated_at: datetime
     model_config = ConfigDict(arbitrary_types_allowed=True)
     class config : 
         orm_mode = True
 
-class UpdateActivity(BaseModel):
+class UpdateArticle(BaseModel):
     title : str 
     content: str 
+    summary: str
+    main_photo_url: str
+    sub_photo_urls: str
+    social_share_links: str
 
 
 ################################# stories ############################# 
@@ -100,3 +112,25 @@ class RespondStory(BaseModel):
 class UpdateStory(BaseModel):
     title : str 
     content: str 
+
+
+
+
+
+############################## activities ###############################
+class CreateActivity(BaseModel):
+    title : str 
+    description: str 
+    date : str
+
+
+class RespondActivity(BaseModel):
+    id : int 
+    author_id: int 
+    title : str 
+    description: str 
+    created_at : datetime
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+    class config : 
+        orm_mode = True
+

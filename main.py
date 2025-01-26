@@ -3,7 +3,7 @@ import models
 from database import Base , engine
 import psycopg2
 from psycopg2.extras import RealDictCursor
-from routers import user , login , form , activity
+from routers import article, user , login , form
 
 
 
@@ -23,4 +23,4 @@ except:
 app.include_router(user.router)
 app.include_router(login.router)
 app.include_router(form.router)
-app.include_router(activity.router)
+app.include_router(article.router)
